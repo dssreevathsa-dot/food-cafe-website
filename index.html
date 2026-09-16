@@ -1,13 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>food-cafe</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRWW Coffee</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      background-color: #1a1412;
+      color: #eae5df;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    .glass-nav {
+      background: rgba(40, 30, 25, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .glass-card {
+      background: rgba(45, 35, 30, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Fixed Navigation Bar -->
+  <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl glass-nav rounded-full px-6 py-3 flex items-center justify-between z-50 border border-white/10 shadow-xl">
+    <div class="text-2xl font-black tracking-widest text-amber-100">BRWW</div>
+    
+    <div class="hidden md:flex space-x-6 text-sm font-medium text-amber-200/80">
+      <a href="#" class="px-4 py-1.5 rounded-full bg-white/10 text-white">Home</a>
+      <a href="#menu" class="hover:text-white transition py-1.5">Menu</a>
+      <a href="#about" class="hover:text-white transition py-1.5">About Us</a>
+      <a href="#" class="hover:text-white transition py-1.5">Reviews</a>
+      <a href="#" class="hover:text-white transition py-1.5">Promotions</a>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <button class="p-2 text-amber-200/80 hover:text-white"><i data-lucide="user" class="w-5 h-5"></i></button>
+      <button class="p-2 text-amber-200/80 hover:text-white"><i data-lucide="shopping-bag" class="w-5 h-5"></i></button>
+      <button class="bg-amber-100 text-amber-950 font-semibold px-5 py-2 rounded-full text-sm hover:bg-white transition">Order Now</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen pt-32 pb-16 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="space-y-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/30 text-amber-300 text-xs border border-amber-800/40">
+        <span class="w-2 h-2 rounded-full bg-amber-400"></span> Artisan Coffee Brewery • Est. 2010
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight text-amber-50">
+        Discover the <br/><span class="text-amber-200 font-serif italic">Superior Taste</span> <br/>Every Sip!
+      </h1>
+      <p class="text-amber-200/60 max-w-md text-sm leading-relaxed">
+        For us, coffee is not just a drink — it's an art. We invite you on a unique culinary journey where every sip is a meeting with the perfect taste.
+      </p>
+      <button class="bg-amber-800 hover:bg-amber-700 text-amber-100 px-6 py-3 rounded-full font-medium text-sm transition">
+        Explore Coffee
+      </button>
+    </div>
+
+    <div class="relative flex justify-center">
+      <!-- Outer/Inner Splash Overlay Representation -->
+      <div class="w-72 h-96 bg-gradient-to-b from-amber-900/40 to-amber-950/80 rounded-3xl border border-white/10 flex flex-col justify-end p-6 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80');"></div>
+        <div class="relative z-10 bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/10">
+          <h3 class="font-bold text-amber-100 text-xl">BRWW</h3>
+          <p class="text-xs text-amber-300">Signature Blend</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-6xl font-serif text-center mb-12 text-amber-900/30 uppercase tracking-widest font-black">
+      Curated Coffee Selection
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/40 transition">
+        <div class="h-48 bg-black/20 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80" alt="Cappuccino" class="object-cover h-full w-full">
+          <span class="absolute top-3 right-3 bg-black/60 text-amber-300 px-2 py-0.5 rounded-full text-xs font-bold flex items-center gap-1">
+            4.9 ★
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-amber-100">Cappuccino</h3>
+        <p class="text-xs text-amber-200/60 my-2">A timeless classic: 20% espresso, 40% velvety steamed milk, and 40% airy milk foam.</p>
+        <div class="flex items-center justify-between mt-4">
+          <span class="text-lg font-bold text-amber-100">$4.50</span>
+          <button class="w-8 h-8 rounded-full bg-amber-800 flex items-center justify-center hover:bg-amber-700 text-white font-bold">+</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-amber-500/30">
+        <div class="h-48 bg-black/20 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80" alt="Latte" class="object-cover h-full w-full">
+          <span class="absolute top-3 right-3 bg-black/60 text-amber-300 px-2 py-0.5 rounded-full text-xs font-bold flex items-center gap-1">
+            5.0 ★
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-amber-100">Latte</h3>
+        <p class="text-xs text-amber-200/60 my-2">Smooth and creamy: 30% espresso and 70% fresh hot milk. Perfect for a soft treat.</p>
+        <div class="flex items-center justify-between mt-4">
+          <span class="text-lg font-bold text-amber-100">$5.00</span>
+          <button class="w-8 h-8 rounded-full bg-amber-800 flex items-center justify-center hover:bg-amber-700 text-white font-bold">+</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/40 transition">
+        <div class="h-48 bg-black/20 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80" alt="Mocha" class="object-cover h-full w-full">
+          <span class="absolute top-3 right-3 bg-black/60 text-amber-300 px-2 py-0.5 rounded-full text-xs font-bold flex items-center gap-1">
+            4.7 ★
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-amber-100">Mocha</h3>
+        <p class="text-xs text-amber-200/60 my-2">For chocolate lovers: espresso, rich cocoa, and steamed milk topped with light cream.</p>
+        <div class="flex items-center justify-between mt-4">
+          <span class="text-lg font-bold text-amber-100">$5.00</span>
+          <button class="w-8 h-8 rounded-full bg-amber-800 flex items-center justify-center hover:bg-amber-700 text-white font-bold">+</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold tracking-widest text-amber-200 uppercase mb-16">BRWW IS</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+      <div class="space-y-8">
+        <div>
+          <h4 class="text-lg font-bold text-amber-100 flex items-center gap-2">
+            <span class="text-amber-600 font-serif italic text-2xl">1.</span> Premium Bean Quality
+          </h4>
+          <p class="text-xs text-amber-200/60 mt-2 leading-relaxed">Our passion for coffee starts with selecting the finest beans. We pay attention to every detail so each cup delivers exceptional quality.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold text-amber-100 flex items-center gap-2">
+            <span class="text-amber-600 font-serif italic text-2xl">2.</span> Atmosphere of Inspiration
+          </h4>
+          <p class="text-xs text-amber-200/60 mt-2 leading-relaxed">Our cozy space is filled with warmth and comfort. Here, surrounded by attentive service, you can relax and enjoy good company.</p>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h4 class="text-lg font-bold text-amber-100 flex items-center gap-2">
+            <span class="text-amber-600 font-serif italic text-2xl">3.</span> Personalized Approach
+          </h4>
+          <p class="text-xs text-amber-200/60 mt-2 leading-relaxed">We craft coffee that reflects your preferences, creating unique drinks tailored specifically for you.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold text-amber-100 flex items-center gap-2">
+            <span class="text-amber-600 font-serif italic text-2xl">4.</span> Professional Barista Team
+          </h4>
+          <p class="text-xs text-amber-200/60 mt-2 leading-relaxed">Our baristas have extensive experience in coffee brewing and are eager to demonstrate their skills in every cup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Card -->
+  <section class="py-12 px-6 max-w-5xl mx-auto">
+    <div class="glass-card rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-6 border border-white/10">
+      <div>
+        <h3 class="text-2xl font-bold text-amber-100">Find out which coffee suits you best</h3>
+        <p class="text-xs text-amber-200/60 mt-1">Take a short 1-minute test to get custom recommendations.</p>
+      </div>
+      <button class="bg-amber-100 text-amber-950 px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-white transition whitespace-nowrap">
+        Take the test
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-white/5 max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs text-amber-200/40">
+    <div>&copy; 2026 BRWW Coffee Brewery. All rights reserved.</div>
+    <div class="flex space-x-6 mt-4 sm:mt-0">
+      <a href="#" class="hover:text-amber-200">Coffee news</a>
+      <a href="#" class="hover:text-amber-200">Telegram</a>
+      <a href="#" class="hover:text-amber-200">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
 </html>
